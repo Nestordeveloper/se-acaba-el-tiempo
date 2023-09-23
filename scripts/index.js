@@ -10,7 +10,7 @@ function getHourHandAngle(time) {
 }
 
 function getMinuteHandAngle(time) {
-    time %= 3200;
+    time %= 3600;
     return ((6 * time / 60) + 180) % 360;
 }
 
@@ -20,11 +20,11 @@ function getSecondHandAngle(time) {
 }
 
 const hour = document.getElementById('hour');
-const minute = document.getElementById('minute');
-const second = document.getElementById('second');
+const minutes = document.getElementById('minutes');
+const seconds = document.getElementById('seconds');
       
 setInterval( function() {
-    var time = getSecondsSinceStartOfDay();
+    let time = getSecondsSinceStartOfDay();
     console.log(time);
     hour.style.transform = 
     `rotate(${getHourHandAngle(time)}deg)`;
